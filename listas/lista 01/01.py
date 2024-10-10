@@ -13,5 +13,5 @@ class Circulo:
 
 
 c = Circulo(5, 3.1)
-print(c.circunferencia)
-print(c.area)
+print(f'a circunferência do seu círculo é {c.circunferencia}')
+print(f'a área do seu círculo é {c.area}')
