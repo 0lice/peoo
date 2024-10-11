@@ -1,6 +1,3 @@
-import streamlit as st
+from retanguloUI import RetanguloUI
 
-st.header('POO em Python com Streamlit')
-
-if st.button('clique aqui'):
-    st.write('bem-vindo(a) ao streamlit')
+RetanguloUI.main()
