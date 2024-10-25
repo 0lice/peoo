@@ -112,10 +112,10 @@ class Clientes:
             cls.objetos.remove(x)
             cls.salvar()
 
-    @classmethod # Isso indica que o método é um método de classe, ou seja, ele pode acessar atributos da classe (como cls.objetos) em vez de instâncias específicas da classe.
+    @classmethod 
     def salvar(cls):
-        with open('clientes.json', mode='w') as arquivo: #  Abre o arquivo clientes.json no modo de escrita ("w"). Se o arquivo já existir, ele será sobrescrito.
-            json.dump(cls.objetos, arquivo, default = vars) # Serializa cls.objetos e grava essa representação no arquivo JSON. O parâmetro default=vars indica que, se um objeto não puder ser serializado diretamente, a função vars() será chamada para obter um dicionário com seus atributos.
+        with open('clientes.json', mode='w') as arquivo: 
+            json.dump(cls.objetos, arquivo, default = vars) 
 
     def abrir(cls):
         cls.objetos = []
