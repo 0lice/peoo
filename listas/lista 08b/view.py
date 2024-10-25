@@ -20,5 +20,5 @@ class View:
     @staticmethod
     def cliente_excluir(id):
         c = Cliente(id, 'noname', 'noemail', '')
-        Clientes
+        Clientes.excluir(c)
 
