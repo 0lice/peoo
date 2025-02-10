@@ -1,123 +1,39 @@
-import re
-
 class Banda:
-    def __init__(self, id, id_representante, nome, gravadora, genero, email, senha, tel):
-        self.__id = id
-        self.__idr = id_representante 
-        self.__n = nome
-        self.__gr = gravadora
-        self.__ge = genero
-        self.__e = email
-        self.__s = senha
-        self.__tel = tel
+    def __init__(self, id: int, id_representante: int):
+        self.__id = ""
+        self.id = id
+        self.__idr = ""
+        self.id_representante = id_representante
     
-    def set_id(self, id):
-        try:
-            if not id:
-                raise ValueError('o id não pode estar vazio.')
-            elif not isinstance(id, int):
-                raise ValueError('o id deve ser um número inteiro.')
-            self.__id = id
-        except ValueError as ve:
-            print(f'Erro: {ve}')
+@property
+def id_banda(self):
+    return self.__id
     
-    def set_idr(self, idr):
-        try:
-            if not idr:
-                raise ValueError('o id do representante não pode estar vazio.')
-            elif not isinstance(idr, int):
-                raise ValueError('o id do representante deve ser um número inteiro.')
-            self.__idr = idr
-        except ValueError as ve:
-            print(f'Erro: {ve}')
+@id.setter
+def banda_id(self, novo_id):
+    if isinstance(novo_id, int):
+        self.__id = novo_id
+    else:
+        raise ValueError('Id inválido. O id deve ser um número inteiro.')
+
+@property
+def id_representante(self):
+    return self.__idr
     
-    def set_nome(self, nome):
-        try:
-            if not nome:
-                raise ValueError('o nome não pode estar vazio.')
-            elif not isinstance(nome, str):
-                raise ValueError('o nome deve ser um texto.')
-            self.__n = nome
-        except ValueError as ve:
-            print(f'Erro: {ve}')
+@id.setter
+def id_representante(self, novo_idr):
+    if isinstance(novo_idr, int):
+        self.__idr = novo_idr
+    else:
+        raise ValueError('Id inválido. O id deve ser um número inteiro.')
+
+@property
+def id_representante(self):
+    return self.__idr
     
-    def set_gravadora(self, gravadora):
-        try:
-            if not gravadora:
-                raise ValueError('o nome da gravadora não pode estar vazio.')
-            elif not isinstance(gravadora, str):
-                raise ValueError('o nome da gravadora deve ser um texto.')
-            self.__gr = gravadora
-        except ValueError as ve:
-            print(f'Erro: {ve}')
-
-    def set_genero(self, genero):
-        try:
-            if not genero:
-                raise ValueError('o gênero musical não pode estar vazio.')
-            elif not isinstance(genero, str):
-                raise ValueError('o gênero musical deve ser um texto.')
-            self.__ge = genero
-        except ValueError as ve:
-            print(f'Erro: {ve}')
-
-    def set_email(self, email):
-        padrao_email = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-        try:
-            if not email:
-                raise ValueError('O email não pode estar vazio.')
-            elif not isinstance(email, str):
-                raise ValueError('O email deve ser um texto.')
-            if not re.match(padrao_email, email):
-                raise ValueError('O email não tem o formato correto.')
-            
-            self.__e = email
-        except ValueError as ve:
-            print(f'Erro: {ve}')
-            
-    def set_senha(self, senha):
-        try:
-            if not senha:
-                raise ValueError('a senha não pode estar vazia.')
-            elif not isinstance(senha, str):
-                raise ValueError('a senha deve ser um texto.')
-            self.__s = senha
-        except ValueError as ve:
-            print(f'Erro: {ve}')
-
-    def set_telefone(self, telefone):
-        try:
-            if not telefone:
-                raise ValueError('o telefone não pode estar vazio.')
-            elif not isinstance(telefone, int):
-                raise ValueError('o telefone deve ser um número.')
-            self.__tel = telefone
-        except ValueError as ve:
-            print(f'Erro: {ve}')
-            
-    def get_id(self):
-        return self.__id
-
-    def get_idr(self):
-        return self.__idr
-
-    def get_nome(self):
-        return self.__n
-        
-    def get_gravadora(self):
-        return self.__gr
-        
-    def get_genero(self):
-        return self.__ge
-
-    def get_email(self):
-        return self.__e
-
-    def get_senha(self):
-        return self.__s
-
-    def get_telefone(self):
-        return self.__tel
-
-    def __str__(self):
-        return f'{self.__id} - {self.__idr} - {self.__n} - {self.__gr} - {self.__ge} - {self.__e} - {self.__s} - {self.__tel}'
+@id.setter
+def id_representante(self, novo_idr):
+    if isinstance(novo_idr, int):
+        self.__idr = novo_idr
+    else:
+        raise ValueError('Id inválido. O id deve ser um número inteiro.')
