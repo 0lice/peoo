@@ -7,6 +7,7 @@ class Cidade:
         self.nome = nome
         self.local_show = local_show
         self.estado = estado
+        self.apresentacoes = []
 
     @property
     def id(self):
@@ -49,15 +50,19 @@ class Cidade:
             raise ValueError("Estado inválido. Informe pelo menos 2 caracteres.")
         self.__estado = valor.strip()
 
+    def adicionar_apresentacao(self, apresentacao):
+        self.apresentacoes.append(apresentacao)
+
     def __str__(self):
-        return f"{self.nome} - {self.local_show} / {self.estado}"
+        return f"nome: {self.nome} - lugar do show: {self.local_show} - estado: {self.estado} - apresentações: {[ap.nome for ap in self.apresentacoes]}"
 
     def to_dict(self):
         return {
             "id": self.id,
             "nome": self.nome,
             "local_show": self.local_show,
-            "estado": self.estado
+            "estado": self.estado,
+            "apresentacoes": [ap.nome for ap in self.apresentacoes]
         }
     
 

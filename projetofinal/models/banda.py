@@ -1,7 +1,5 @@
 import re
-import json
 from models.persistencia import Persistencia
-from models.usuario import Usuario
 from models.representante import Representante
 
 class Banda:
@@ -14,6 +12,7 @@ class Banda:
         self.email = email        
         self.senha = senha        
         self.tel = tel
+        self.apresentacoes = []
 
     @property
     def id(self):
@@ -106,6 +105,9 @@ class Banda:
         else:
             raise ValueError('O número de telefone no padrão correto. Verifique se o formato é esse: (00) 0000-0000 para fixos, (00) 90000-0000 para celulares.')
 
+    def adicionar_apresentacao(self, apresentacao):
+        self.apresentacoes.append(apresentacao)
+
     def to_dict(self):
         return {
             "id": self.__id, 
@@ -115,11 +117,12 @@ class Banda:
             "genero": self.__genero, 
             "email": self.__email, 
             "senha": self.__senha, 
-            "tel": self.__tel
+            "tel": self.__tel,
+            "apresentacoes": [ap.nome for ap in self.apresentacoes]
         }
 
     def __str__(self):
-        return f"Banda {self.id}: {self.nome} - {self.genero} (Gravadora: {self.gravadora})"
+        return f"Banda {self.id}: {self.nome} - {self.genero} - Gravadora: {self.gravadora} - Apresentações: {[ap.nome for ap in self.apresentacoes]}"
 
 class Bandas(Persistencia):
     def inserir(self, banda: Banda):
