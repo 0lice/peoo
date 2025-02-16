@@ -1,12 +1,11 @@
-from usuario import Usuario
-from persistencia import Persistencia
+from models.usuario import Usuario
+from models.persistencia import Persistencia
 import re
 
 class Representante(Usuario):
     def __init__(self, id: int, nome: str, email: str, senha: str, telefone: str):
         super().__init__(id, nome, email, senha)
         self.telefone = telefone
-        self.bandas = []
 
     @property
     def telefone(self):
@@ -23,14 +22,10 @@ class Representante(Usuario):
     def to_dict(self):
         data = super().to_dict()
         data["telefone"] = self.__telefone
-        data["bandas"] = [b.nome for b in self.bandas]
         return data
 
-    def adicionar_banda(self, banda):
-        self.bandas.append(banda)
-
     def __str__(self):
-        return f"Representante {self.id}: {self.nome}, {self.email}, {self.telefone}, {[b.nome for b in self.bandas]}"
+        return f"Representante {self.id}: {self.nome} ({self.email}, {self.telefone})"
     
 class Representantes(Persistencia):
     def inserir(self, representante: Representante):
