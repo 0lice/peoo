@@ -1,16 +1,25 @@
-from models.cliente import Cliente
-from models.persistencia_json import PersistenciaJSON
+from models.banda import Banda
+from models.representante import Representante
+from models.usuario import Usuario
+from models.persistencia import Persistencia
 
-# Criando um objeto para teste
-cliente_teste = Cliente(1, "Alice", "alice@email.com", "11999999999")
+banda_teste = Banda(1, "Banda X", "Rock", ["Alice", "Bob", "Charlie"])
+representante_teste = Representante(1, "Carlos", banda_teste)
+usuario_teste = Usuario(1, "João", "joao@email.com")
 
-# Criando um gerenciador de persistência
-persistencia = PersistenciaJSON("clientes.json")
+persistencia = Persistencia("dados_agenda.json")
 
-# Salvando o cliente
-persistencia.salvar(cliente_teste)
+dados_existentes = persistencia.abrir()
 
-# Carregando os dados
-dados_carregados = persistencia.carregar()
+if not isinstance(dados_existentes, list):
+    dados_existentes = []
+
+dados_existentes.append(banda_teste.to_dict())
+dados_existentes.append(representante_teste.to_dict())
+dados_existentes.append(usuario_teste.to_dict())
+
+persistencia.salvar(dados_existentes)
+
+dados_carregados = persistencia.abrir()
 
 print(dados_carregados)
