@@ -56,7 +56,7 @@ class Usuario:
         self.__senha = nova_senha
 
     def to_dict(self):
-        return {"id": self.__id, "nome": self.__nome, "email": self.__email, "senha": self.__senha}
+        return {"nome": self.__nome, "email": self.__email, "senha": self.__senha}
 
     def __str__(self):
         return f"Usuário {self.id}: {self.nome} ({self.email})"
