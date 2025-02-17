@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "id_representante": 2,
+        "nome": "Banda X",
+        "gravadora": "bandeirantes",
+        "genero": "rock",
+        "email": "nalice123@gmail.com",
+        "senha": "alice@123",
+        "tel": "(84) 99965-5932"
+    },
+    {
+        "nome": "Carlos",
+        "email": "carlinhos267@hotmail.com",
+        "senha": "socorro.123",
+        "telefone": "(21) 98876-0991"
+    },
+    {
+        "nome": "Joao",
+        "email": "joao@email.com",
+        "senha": "juarez47*"
+    }
+]

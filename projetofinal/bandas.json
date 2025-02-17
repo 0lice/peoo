@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "id_representante": 1,
+        "nome": "RockStars",
+        "gravadora": "Universal",
+        "genero": "Rock",
+        "email": "rockstars@email.com",
+        "senha": "alcie@123",
+        "tel": "(11) 98765-4321"
+    },
+    {
+        "id": 1,
+        "id_representante": 1,
+        "nome": "RockStars",
+        "gravadora": "Universal",
+        "genero": "Rock",
+        "email": "rockstars@email.com",
+        "senha": "alcie@123",
+        "tel": "(11) 98765-4321"
+    },
+    {
+        "id": 1,
+        "id_representante": 1,
+        "nome": "RockStars",
+        "gravadora": "Universal",
+        "genero": "Rock",
+        "email": "rockstars@email.com",
+        "senha": "alcie@123",
+        "tel": "(11) 98765-4321"
+    },
+    {
+        "id": 1,
+        "id_representante": 1,
+        "nome": "RockStars",
+        "gravadora": "Universal",
+        "genero": "Rock",
+        "email": "rockstars@email.com",
+        "senha": "alcie@123",
+        "tel": "(11) 98765-4321"
+    },
+    {
+        "id": 1,
+        "id_representante": 1,
+        "nome": "RockStars",
+        "gravadora": "Universal",
+        "genero": "Rock",
+        "email": "rockstars@email.com",
+        "senha": "alcie@123",
+        "tel": "(11) 98765-4321"
+    }
+]
