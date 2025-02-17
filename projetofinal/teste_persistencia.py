@@ -3,9 +3,9 @@ from models.representante import Representante
 from models.usuario import Usuario
 from models.persistencia import Persistencia
 
-banda_teste = Banda(1, "Banda X", "Rock", ["Alice", "Bob", "Charlie"])
-representante_teste = Representante(1, "Carlos", banda_teste)
-usuario_teste = Usuario(1, "João", "joao@email.com")
+banda_teste = Banda(1, 2, "Banda X", "bandeirantes", "rock", "nalice123@gmail.com", "alice@123", "(84) 99965-5932")
+representante_teste = Representante(1, "Carlos", "carlinhos267@hotmail.com", "socorro.123", "(21) 98876-0991")
+usuario_teste = Usuario(1, "João", "joao@email.com", "juarez47*")
 
 persistencia = Persistencia("dados_agenda.json")
 
